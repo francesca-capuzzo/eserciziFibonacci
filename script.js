@@ -29,16 +29,16 @@ console.log(fibonacciSequence(100));
 //************ ESERCIZIO 2 *************/
 
 function fibonacci(n) {
-    if (n === 0){
+    if (n === 0) {
         return 0;
     }
-    else if (n === 1){
+    else if (n === 1) {
         return 1;
     }
 
     let x = 0;
     let y = 1;
-    for (let i = 2; i < n; i++) {
+    for (let i = 2; i < n + 1; i++) {
         y = x + y;
         x = y - x;
     }
@@ -47,8 +47,60 @@ function fibonacci(n) {
 
 console.log(fibonacci(10));
 
-y = 0 + 1 = 1
-x = 1
+//SPIEGAZIONE:
+// i2 ==> y = x + y     y = 0 + 1    y = 1   ==> x + y = 2
+//        x = y - x     x = 1 - 0    x = 1
+// i3 ==> y = x + y                  y = 2   ==> x + y = 3
+//        x = y - x     x = 2 - 1    x = 1      
+// i4 ==> y = x + y                  y = 3   ==> x + y = 5
+//        x = y - x     x = 3 - 1    x = 2
+// i5 ==> y = x + y                  y = 5   ==> x + y = 8
+//        x = y - x     x = 5 - 2    x = 3
+// i6 ==> y = x + y                  y = 8   ==> x + y = 13
+//        x = y - x     x = 8 - 3    x = 5
+// i7 ==> y = x + y                  y = 13  ==> x + y = 21
+//        x = y - x    x = 13 - 5    x = 8
+//.....etcetera
+
+//************ ESERCIZIO 3 *************/
 
 
+function fibonacciReverse(number) {
+    if (number === 0){
+        return 0;
+    }
+    if (number === 1){
+        return 1, 2;
+    }
+    if (number > 2){
+        reverse = (fibonacci(number-1) + fibonacci(number-2));
+        return reverse[number];
+}
+}
 
+console.log(fibonacci(7));
+
+
+//************ ESERCIZIO 4 *************/
+let risultato;
+function fattoriale(numero) {
+    if (numero === 0){
+        return 1;
+    }
+    if (numero >0){
+        for (let k = 0; k < numero; k++) {
+           risultato = numero * (fattoriale(numero - 1)); 
+        }
+    }
+return risultato;
+}
+
+console.log(fattoriale(7));
+
+//SPIEGAZIONE:
+//0! = 1
+//1! = 1 * 1 = 1
+//2! = 2 * 1 = 2
+//3! = 3 * 2 * 1 = 6
+//4! = 4 * 3 * 2 * 1 = 24
+//5! = 5 * 4 * 3 * 2 * 1 = 120 ...
