@@ -13,6 +13,33 @@ function fibonacciSequence(number100) {
 }
 console.log(fibonacciSequence(100));
 
+//speigazione in classe://///////////////////////////////////////////////////////////////////////////////////
+
+let f0 = 0;
+let f1 = 1;
+
+function fibonacciNonRicorsivo() {
+    
+    for (let v = 0; v < 101; v++) {
+        
+        if (v === 0) {
+            console.log(0);
+            continue;
+        }
+        
+        if (v === 1) {
+            console.log(1);
+            continue;
+        }
+        let f = f1 + f0;
+        console.log(f);
+        f0 = f1;
+        f1 = f;
+    }
+}
+
+fibonacciNonRicorsivo();
+
 //SPIEGAZIONE:
 // i0 --> n1=0 n2=1 n3=1
 // i1 --> n1=1 n2=1 n3=2
@@ -47,6 +74,34 @@ function fibonacci(n) {
 
 console.log(fibonacci(10));
 
+//spiegazione in classe ///////////////////////////////////////////////////////////////////////////////////////
+
+let fn_2 = 0;
+let fn_1 = 1;
+
+function fibonacciNonRicorsivo(maxPosition) {
+    
+    for (let v = 0; v < maxPosition; v++) {
+        
+        if (v === 0) {
+            console.log(0);
+            continue;
+        }
+        
+        if (v === 1) {
+            console.log(1);
+            continue;
+        }
+        let fn = fn_1 + fn_2;
+        console.log(fn);
+        fn_2 = fn_1;
+        fn_1 = fn;
+        
+    }
+}
+
+fibonacciNonRicorsivo(200);
+
 //SPIEGAZIONE:
 // i2 ==> y = x + y     y = 0 + 1    y = 1   ==> x + y = 2
 //        x = y - x     x = 1 - 0    x = 1
@@ -66,28 +121,66 @@ console.log(fibonacci(10));
 
 
 function fibonacciReverse(number) {
-    if (number === 0){
+    if (number === 0) {
         return 0;
     }
-    if (number === 1){
+    if (number === 1) {
         return 1, 2;
     }
-    if (number > 2){
-        reverse = (fibonacci(number-1) + fibonacci(number-2));
+    if (number > 2) {
+        reverse = (fibonacci(number - 1) + fibonacci(number - 2));
         return reverse[number];
-}
+    }
 }
 
 console.log(fibonacci(7));
 
 
+//spiegazione in classe:////////////////////////////////////////////////////////////////////////////////////
+
+
+
+function fibonacciNonRicorsivoPerPosizione(numero) {
+    
+    let fn2 = 0;
+    let fn1 = 1;
+    
+    if (numero === 0) {
+        return 0;
+    }
+    if (numero === 1) {
+        return 1;
+    }
+    
+    let position = 2;
+    
+    while (true) {
+        let f = fn1 + fn2;
+        if (f === numero) {
+            return position;   
+        }
+        if (f > numero) {
+            return;                              //è come dire return undefined.
+        }
+        
+        position++
+        fn2 = fn1;
+        fn1 = f;
+    }
+
+}
+console.log(fibonacciNonRicorsivoPerPosizione(21));
+
+
 //************ ESERCIZIO 4 *************/
+
 let risultato;
+
 function fattoriale(numero) {
     if (numero === 0){
         return 1;
     }
-    if (numero >0){
+    if (numero > 0){
         for (let k = 0; k < numero; k++) {
            risultato = numero * (fattoriale(numero - 1)); 
         }
@@ -96,6 +189,19 @@ return risultato;
 }
 
 console.log(fattoriale(7));
+
+//spiegazione in classe://///////////////////////////////////////////////////////////////////////////////
+
+function fattoriale2(numero) {
+
+    if (numero === 0) {
+        return 1;
+    }
+    return numero * fattoriale2(numero - 1);
+}
+
+console.log(fattoriale(3));
+
 
 //SPIEGAZIONE:
 //0! = 1
