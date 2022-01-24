@@ -13,7 +13,7 @@ function fattorialeNonRicorsivo(numero) {
     return f;
 }
 
-fattorialeNonRicorsivo(10);
+fattorialeNonRicorsivo(5);
 
 // function factorialize(num) {
 //     var factorial = 1;
@@ -23,3 +23,5 @@ fattorialeNonRicorsivo(10);
 //     return factorial;
 //   }
 //   console.log(factorialize(10));
+
+
