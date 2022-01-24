@@ -64,6 +64,7 @@ console.log(fibonacci(10));
 
 //************ ESERCIZIO 3 *************/
 
+let reverse;
 
 function fibonacciReverse(number) {
     if (number === 0){
