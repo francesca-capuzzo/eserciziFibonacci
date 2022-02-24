@@ -13,15 +13,15 @@ function fattorialeNonRicorsivo(numero) {
     return f;
 }
 
-fattorialeNonRicorsivo(5);
+fattorialeNonRicorsivo(10);
 
-// function factorialize(num) {
-//     var factorial = 1;
-//     for (var i = 2; i <= num; i++) {
-//       factorial *= i;
-//     }
-//     return factorial;
-//   }
-//   console.log(factorialize(10));
+function factorialize(num) {
+    var factorial = 1;
+    for (var i = 2; i <= num; i++) {
+      factorial *= i;
+    }
+    return factorial;
+  }
+  console.log("factorialize",factorialize(10));
 
 

@@ -10,6 +10,7 @@ function fibonacciSequence(number100) {
         n1 = n2; 
         n2 = n3; 
     }
+    return n1;
 }
 console.log(fibonacciSequence(100));
 
@@ -72,7 +73,7 @@ function fibonacci(n) {
     return x + y;
 }
 
-console.log(fibonacci(10));
+console.log("fibonacci", fibonacci(10));
 
 //spiegazione in classe ///////////////////////////////////////////////////////////////////////////////////////
 
